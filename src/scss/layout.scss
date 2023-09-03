@@ -1,0 +1,36 @@
+@use '_config.scss' as *;
+
+// main Bootstrap Module
+//@import 'config/_init-bootstrap.scss';
+
+// example of applying Modular Bootsrap Module
+// @import "~/node_modules/bootstrap/scss/modal";
+// @import "~/node_modules/bootstrap/scss/close";
+
+@use "~bootstrap/scss/bootstrap.scss" with (
+    $container-max-widths: (
+        sm:  80%,
+        md:  93%,
+        lg:  93%,
+        xl:  83%,
+        xxl: 83%
+    ),
+);
+
+
+// |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾| //
+// | Timedoor New Standard                   | //
+// |_________________________________________| //
+
+.ratio-item {
+    @extend %ratioItem;
+}
+
+// default styling, please delete when making theme for wordpress
+.navbar-brand {
+    width: 150px;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

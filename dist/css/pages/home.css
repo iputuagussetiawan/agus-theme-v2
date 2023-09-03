@@ -1,0 +1,208 @@
+.banner-swiper {
+  position: relative;
+  height: 100vh;
+}
+.banner-swiper__image-container {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.banner-swiper__image-container:before {
+  content: "";
+  display: block;
+  padding-top: 46.875%;
+}
+.banner-swiper__image-container .ratio-item {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.banner-swiper .swiper-vertical > .swiper-pagination-bullets, .banner-swiper .swiper-pagination-vertical.swiper-pagination-bullets {
+  left: unset;
+  top: unset;
+  transform: unset;
+  right: 100px;
+  bottom: 100px;
+}
+.banner-swiper .swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet, .banner-swiper .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet {
+  display: inline-block;
+}
+.banner-swiper__lines {
+  position: relative;
+}
+.banner-swiper__line {
+  display: block;
+  width: 1px;
+  height: 0;
+  position: fixed;
+  background-color: hsla(0, 0%, 48.6%, 0.2);
+  z-index: 10;
+  top: 0;
+  pointer-events: none;
+  height: 100%;
+}
+.banner-swiper__line:nth-child(1) {
+  left: 25%;
+}
+.banner-swiper__line:nth-child(2) {
+  left: 50%;
+}
+.banner-swiper__line:nth-child(3) {
+  left: 75%;
+}
+.banner-swiper__image-container {
+  height: 100vh;
+}
+.banner-swiper__info-container {
+  position: absolute;
+  top: 30%;
+  left: 7vw;
+  z-index: auto;
+  width: 35vw;
+}
+.banner-swiper__subtitle {
+  position: relative;
+  font-size: 32px;
+  letter-spacing: 1.5px;
+  overflow: hidden;
+  color: #ffffff;
+}
+.banner-swiper__subtitle-text {
+  display: inline-block;
+}
+.banner-swiper__title {
+  font-size: 72px;
+  z-index: 2;
+  color: #ffffff;
+  overflow: hidden;
+}
+.banner-swiper__title-text {
+  display: inline-block;
+}
+
+.bs-bullets .swiper-pagination-bullet {
+  position: relative;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  background: transparent;
+  font-size: 16px;
+  border-radius: 0;
+  transition: opacity 0.3s;
+  color: #ededed;
+}
+
+.bs-bullets .swiper-pagination-bullet::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 1px;
+  background-color: #c6c6c6;
+  vertical-align: middle;
+  margin: 0 20px;
+  transition: all 0.4s ease;
+}
+
+.bs-bullets .swiper-pagination-bullet:last-child::before,
+.bs-bullets .swiper-pagination-bullet:last-child::after {
+  display: none;
+}
+
+.bs-bullets .swiper-pagination-bullet::before {
+  content: "";
+  display: none;
+  position: absolute;
+  left: 37.8px;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  top: 50%;
+}
+
+.bs-bullets .swiper-pagination-bullet-active::before {
+  display: block;
+}
+
+.bs-bullets .swiper-pagination-bullet-active {
+  transform: translateY(0);
+}
+
+.bs-bullets .swiper-pagination-bullet-active::before {
+  display: block;
+}
+
+.progress-init::before {
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.2s;
+}
+
+.bs-bullets .swiper-pagination-bullet.anim-in {
+  transform: translateY(0);
+}
+
+.bs-bullets .swiper-pagination-bullet-active.anim-in::after {
+  width: 100px;
+  transition-delay: 1s;
+}
+
+.anim-in.progress-init::before {
+  animation-name: progressBar;
+}
+@keyframes progressBar {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100px;
+  }
+}
+.bs-ov {
+  position: absolute;
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0.9764705882);
+  top: 0;
+  z-index: 3;
+}
+
+.loaded .bs-ov {
+  height: 0;
+}
+
+.loaded .bs-ov-1 {
+  transition: height 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s;
+}
+
+.loaded .bs-ov-2 {
+  transition: height 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5333s;
+}
+
+.loaded .bs-ov-3 {
+  transition: height 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5666s;
+}
+
+.loaded .bs-ov-4 {
+  transition: height 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5999s;
+}
+
+.bs-ov.trans-start {
+  transition: all 0s;
+  height: 100%;
+}
+
+.bs-ov-1 {
+  left: 0;
+}
+
+.bs-ov-2 {
+  left: 25%;
+}
+
+.bs-ov-3 {
+  left: 50%;
+}
+
+.bs-ov-4 {
+  left: 75%;
+}
+
+/*# sourceMappingURL=home.css.map*/
