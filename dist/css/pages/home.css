@@ -1,3 +1,128 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-line {
+  position: relative;
+}
+.banner-line__item {
+  display: block;
+  width: 1px;
+  height: 0;
+  position: fixed;
+  background-color: hsla(0, 0%, 48.6%, 0.2);
+  z-index: 10;
+  top: 0;
+  pointer-events: none;
+  height: 100%;
+}
+.banner-line__item:nth-child(1) {
+  left: 25%;
+}
+.banner-line__item:nth-child(2) {
+  left: 50%;
+}
+.banner-line__item:nth-child(3) {
+  left: 75%;
+}
+
+.banner-overlay, .banner-overlay--4, .banner-overlay--3, .banner-overlay--2, .banner-overlay--1 {
+  position: absolute;
+  width: 25%;
+  background-color: #000000;
+  top: 0;
+  z-index: 3;
+}
+.banner-overlay.trans-start, .trans-start.banner-overlay--4, .trans-start.banner-overlay--3, .trans-start.banner-overlay--2, .trans-start.banner-overlay--1 {
+  transition: all 0s;
+  height: 100%;
+}
+.banner-overlay.loaded, .loaded.banner-overlay--4, .loaded.banner-overlay--3, .loaded.banner-overlay--2, .loaded.banner-overlay--1 {
+  height: 0;
+}
+.banner-overlay--1 {
+  left: 0;
+}
+.banner-overlay--1.loaded {
+  transition: height 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s;
+}
+.banner-overlay--2 {
+  left: 25%;
+}
+.banner-overlay--2.loaded {
+  transition: height 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5333s;
+}
+.banner-overlay--3 {
+  left: 50%;
+}
+.banner-overlay--3.loaded {
+  transition: height 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5666s;
+}
+.banner-overlay--4 {
+  left: 75%;
+}
+.banner-overlay--4.loaded {
+  transition: height 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5999s;
+}
+
+.banner-content {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: auto;
+  pointer-events: none;
+}
+.banner-content__item {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+.banner-content__item.bs-active {
+  visibility: visible;
+  opacity: 1;
+}
+.banner-content__top {
+  position: absolute;
+  top: 30%;
+  left: 7vw;
+  width: 35vw;
+  z-index: 100;
+}
+.banner-content__title {
+  overflow: hidden;
+  margin-bottom: 30px;
+  line-height: 100px;
+  font-size: 85px;
+  color: #ededed;
+  font-weight: 600;
+  overflow: hidden;
+  letter-spacing: -2px;
+  position: relative;
+  z-index: 4;
+  width: 35vw;
+}
+.banner-content__title-text {
+  display: inline-block;
+}
+.banner-content__category {
+  font-size: 32px;
+  color: #ededed;
+}
+.banner-content__category-text {
+  display: inline-block;
+}
+
 .banner-swiper {
   position: relative;
   height: 100vh;
@@ -25,29 +150,6 @@
 }
 .banner-swiper .swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet, .banner-swiper .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet {
   display: inline-block;
-}
-.banner-swiper__lines {
-  position: relative;
-}
-.banner-swiper__line {
-  display: block;
-  width: 1px;
-  height: 0;
-  position: fixed;
-  background-color: hsla(0, 0%, 48.6%, 0.2);
-  z-index: 10;
-  top: 0;
-  pointer-events: none;
-  height: 100%;
-}
-.banner-swiper__line:nth-child(1) {
-  left: 25%;
-}
-.banner-swiper__line:nth-child(2) {
-  left: 50%;
-}
-.banner-swiper__line:nth-child(3) {
-  left: 75%;
 }
 .banner-swiper__image-container {
   height: 100vh;
@@ -77,6 +179,37 @@
 }
 .banner-swiper__title-text {
   display: inline-block;
+}
+
+.banner-pagination {
+  position: absolute;
+  top: unset !important;
+  height: 50px;
+  right: 7% !important;
+  bottom: 60px;
+  z-index: 99;
+  z-index: 222;
+  overflow: hidden;
+}
+.banner-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  display: inline-block !important;
+}
+
+.banner-navigation {
+  width: 120px;
+  height: 50px;
+  position: absolute;
+  z-index: 222;
+  left: 7%;
+  bottom: 100px;
+}
+.banner-navigation .swiper-button-prev path,
+.banner-navigation .swiper-button-next path {
+  fill: #ffffff;
+}
+.banner-navigation .swiper-button-prev:after,
+.banner-navigation .swiper-button-next:after {
+  display: none;
 }
 
 .bs-bullets .swiper-pagination-bullet {
@@ -114,7 +247,7 @@
   left: 37.8px;
   width: 0;
   height: 2px;
-  background-color: #000;
+  background-color: #ffffff;
   top: 50%;
 }
 
@@ -155,54 +288,6 @@
   to {
     width: 100px;
   }
-}
-.bs-ov {
-  position: absolute;
-  width: 25%;
-  background-color: rgba(0, 0, 0, 0.9764705882);
-  top: 0;
-  z-index: 3;
-}
-
-.loaded .bs-ov {
-  height: 0;
-}
-
-.loaded .bs-ov-1 {
-  transition: height 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s;
-}
-
-.loaded .bs-ov-2 {
-  transition: height 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5333s;
-}
-
-.loaded .bs-ov-3 {
-  transition: height 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5666s;
-}
-
-.loaded .bs-ov-4 {
-  transition: height 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5999s;
-}
-
-.bs-ov.trans-start {
-  transition: all 0s;
-  height: 100%;
-}
-
-.bs-ov-1 {
-  left: 0;
-}
-
-.bs-ov-2 {
-  left: 25%;
-}
-
-.bs-ov-3 {
-  left: 50%;
-}
-
-.bs-ov-4 {
-  left: 75%;
 }
 
 /*# sourceMappingURL=home.css.map*/

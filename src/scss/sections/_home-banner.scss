@@ -1,27 +1,14 @@
 @use 'sass:math';
 @use '../_config.scss' as *;
 
-
-
-.banner-swiper{
-    @include imageRatio(1920,900);
+.banner{
     position: relative;
-    height: 100vh;
+    overflow: hidden
+}
 
-    .swiper-vertical > .swiper-pagination-bullets, .swiper-pagination-vertical.swiper-pagination-bullets {
-        left: unset;
-        top: unset;
-        transform: unset;
-        right: 100px;
-        bottom: 100px;
-    }
-    .swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet {
-        display: inline-block;
-    }
-    &__lines{
-        position: relative;
-    }
-    &__line{
+.banner-line{
+    position: relative;
+    &__item{
         display: block;
         width: 1px;
         height: 0;
@@ -40,6 +27,130 @@
         &:nth-child(3){
             left: 75%;
         }
+    }
+}
+
+.banner-overlay{
+    position: absolute;
+    width: 25%;
+    // height: 100%;
+    background-color: #000000;
+    top: 0;
+    z-index: 3;
+
+    &.trans-start {
+        -webkit-transition: all 0s;
+        -o-transition: all 0s;
+        transition: all 0s;
+        height: 100%;
+    }
+    &.loaded{
+        height: 0
+    }
+
+    &--1{
+        @extend .banner-overlay;
+        left: 0;
+        &.loaded{
+            transition: height .6s cubic-bezier(.645, .045, .355, 1) .5s;
+        }
+    }
+    &--2{
+        @extend .banner-overlay;
+        left: 25%;
+        &.loaded{
+            transition: height .6s cubic-bezier(.645, .045, .355, 1) .5333s;
+        }
+    }
+    &--3{
+        @extend .banner-overlay;
+        left: 50%;
+        &.loaded{
+            transition: height .6s cubic-bezier(.645, .045, .355, 1) .5666s;
+        }
+    }
+    &--4{
+        @extend .banner-overlay;
+        left: 75%;
+        &.loaded{
+            transition: height .6s cubic-bezier(.645, .045, .355, 1) .5999s;
+        }
+    }
+    
+}
+
+.banner-content{
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: auto;
+    pointer-events: none;
+    &__item{
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        &.bs-active{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &__top{
+        position: absolute;
+        top: 30%;
+        left: 7vw;
+        width: 35vw;
+        z-index: 100;
+    }
+    &__title{
+        overflow: hidden;
+        margin-bottom: 30px;
+        line-height: 100px;
+        font-size: 85px;
+        color: #ededed;
+        font-weight: 600;
+        overflow: hidden;
+        letter-spacing: -2px;
+        position: relative;
+        z-index: 4;
+        width: 35vw;
+    }
+    &__title-text{
+        display: inline-block;
+    }
+    &__category{
+        font-size: 32px;
+        color: #ededed;
+    }
+    &__category-text{
+        display: inline-block;
+    }
+}
+
+.banner-swiper{
+    @include imageRatio(1920,900);
+    position: relative;
+    height: 100vh;
+
+    .swiper-vertical > .swiper-pagination-bullets, .swiper-pagination-vertical.swiper-pagination-bullets {
+        left: unset;
+        top: unset;
+        transform: unset;
+        right: 100px;
+        bottom: 100px;
+    }
+    .swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet {
+        display: inline-block;
     }
     &__image-container{
         height: 100vh;
@@ -75,14 +186,42 @@
     }
 }
 
-// .bs-bullets {
-//     position: absolute;
-//     right: 7%;
-//     bottom: 7vh;
-//     z-index: 99;
-//     z-index: 222;
-//     overflow: hidden;
-// }
+.banner-pagination{
+    position: absolute;
+    top: unset !important;
+    height: 50px;
+    right: 7% !important;
+    bottom: 60px;
+    z-index: 99;
+    z-index: 222;
+    overflow: hidden;
+    &.swiper-pagination-bullets .swiper-pagination-bullet
+    {
+    display: inline-block !important;
+    }
+
+    
+}
+
+.banner-navigation{
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    z-index: 222;
+    left: 7%;
+    bottom: 100px;
+    .swiper-button-prev,
+    .swiper-button-next{
+        path{
+            fill: #ffffff;
+        }
+    }
+    .swiper-button-prev:after, 
+    .swiper-button-next:after {
+        display: none;
+    }
+}
+
 
 .bs-bullets .swiper-pagination-bullet {
     position: relative;
@@ -119,7 +258,7 @@
     left: 37.8px;
     width: 0;
     height: 2px;
-    background-color: #000;
+    background-color: #ffffff;
     top: 50%;
 }
 .bs-bullets .swiper-pagination-bullet-active::before {
@@ -192,61 +331,4 @@
     to {
         width: 100px;
     }
-}
-
-
-
-.bs-ov {
-    position: absolute;
-    width: 25%;
-    // height: 100%;
-    background-color: #000000f9;
-    top: 0;
-    z-index: 3;
-
-}
-
-.loaded .bs-ov {
-    height: 0
-}
-
-.loaded .bs-ov-1 {
-    transition: height .6s cubic-bezier(.645, .045, .355, 1) .5s;
-}
-
-.loaded .bs-ov-2 {
-    transition: height .6s cubic-bezier(.645, .045, .355, 1) .5333s;
-}
-
-.loaded .bs-ov-3 {
-    transition: height .6s cubic-bezier(.645, .045, .355, 1) .5666s;
-}
-
-.loaded .bs-ov-4 {
-    transition: height .6s cubic-bezier(.645, .045, .355, 1) .5999s;
-}
-
-.bs-ov.trans-start {
-    -webkit-transition: all 0s;
-    -o-transition: all 0s;
-    transition: all 0s;
-    height: 100%;
-}
-
-.bs-ov-1 {
-    left: 0
-}
-
-.bs-ov-2 {
-    left: 25%;
-
-}
-
-.bs-ov-3 {
-    left: 50%;
-
-}
-
-.bs-ov-4 {
-    left: 75%;
 }

@@ -1326,6 +1326,135 @@ anime.random = function (min, max) { return Math.floor(Math.random() * (max - mi
 
 /***/ }),
 
+/***/ "./src/js/modules/Navbar.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/Navbar.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var Navbar = /*#__PURE__*/function () {
+  function Navbar() {
+    _classCallCheck(this, Navbar);
+    this.isClosed = false;
+    this.body = document.querySelector("body");
+    this.burgerMenu = document.querySelector("#hamburger");
+    this.btnToggler = document.querySelector('.menu-toggle');
+  }
+  // 2. events
+  _createClass(Navbar, [{
+    key: "events",
+    value: function events() {
+      var _this = this;
+      this.btnToggler.addEventListener('click', function (event) {
+        event.preventDefault();
+        //console.log('tests')
+        _this.burgerTime();
+      });
+    }
+    // 3. methods (function, action...)
+  }, {
+    key: "burgerTime",
+    value: function burgerTime() {
+      if (this.isClosed == true) {
+        this.closeSideMenu();
+      } else {
+        this.openSideMenu();
+      }
+    }
+  }, {
+    key: "openSideMenu",
+    value: function openSideMenu() {
+      //this.burgerMenu.classList.remove("closed");
+      this.burgerMenu.classList.add("is-active");
+      this.body.classList.add('no-scroll');
+      this.isClosed = true;
+    }
+  }, {
+    key: "closeSideMenu",
+    value: function closeSideMenu() {
+      this.burgerMenu.classList.remove("is-active");
+      //this.burgerMenu.classList.add("closed");
+      this.body.classList.remove('no-scroll');
+      this.isClosed = false;
+    }
+  }, {
+    key: "hoverDropdown",
+    value: function hoverDropdown() {
+      var _iterator = _createForOfIteratorHelper(this.dropdowns),
+        _step;
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var dropdown = _step.value;
+          dropdown.addEventListener('mouseenter', function (event) {
+            var target = event.target;
+            var dropdownToggle = target.querySelector('.dropdown-toggle');
+            var dropdownMenu = target.querySelector('.dropdown-menu');
+            target.classList.add('show');
+            dropdownToggle.classList.add('show');
+            dropdownMenu.classList.add('show');
+            var el_overlay = document.createElement('span');
+            var body = document.querySelector("body");
+            el_overlay.className = 'screen-darken';
+            document.body.appendChild(el_overlay);
+            body.classList.add('no-scroll');
+          });
+          dropdown.addEventListener('mouseleave', function (event) {
+            var target = event.target;
+            var dropdownToggle = target.querySelector('.dropdown-toggle');
+            var dropdownMenu = target.querySelector('.dropdown-menu');
+            var body = document.querySelector("body");
+            target.classList.remove('show');
+            dropdownToggle.classList.remove('show');
+            dropdownMenu.classList.remove('show');
+            document.body.removeChild(document.querySelector('.screen-darken'));
+            body.classList.remove('no-scroll');
+          });
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+    }
+  }, {
+    key: "getSectionId",
+    value: function getSectionId() {
+      var params = new Proxy(new URLSearchParams(window.location.search), {
+        get: function get(searchParams, prop) {
+          return searchParams.get(prop);
+        }
+      });
+      var value = params.section;
+      return value;
+    }
+  }, {
+    key: "scrollToSection",
+    value: function scrollToSection(target) {
+      gsap.to(window, {
+        duration: 0.1,
+        scrollTo: target
+      });
+    }
+  }]);
+  return Navbar;
+}();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navbar);
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[8].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[8].oneOf[1].use[2]!./node_modules/swiper/swiper-bundle.css":
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[8].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[8].oneOf[1].use[2]!./node_modules/swiper/swiper-bundle.css ***!
@@ -11709,10 +11838,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.mjs");
 /* harmony import */ var animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! animejs/lib/anime.es.js */ "./node_modules/animejs/lib/anime.es.js");
 /* harmony import */ var swiper_css_bundle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/bundle */ "./node_modules/swiper/swiper-bundle.css");
+/* harmony import */ var _modules_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/Navbar */ "./src/js/modules/Navbar.js");
 
 
 
+
+var navbar = new _modules_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"]();
+document.addEventListener("DOMContentLoaded", function () {
+  navbar.events();
+});
 if (document.querySelectorAll('.banner-swiper').length) {
+  document.querySelectorAll('.big-slider-item').forEach(function (element, i) {
+    i++;
+    if (i === 1) {
+      element.classList.add('bs-active');
+    }
+  });
   setTimeout(function () {
     document.querySelectorAll('.bs-ov').forEach(function (element) {
       element.classList.add('bs-ov-in');
@@ -11725,101 +11866,150 @@ if (document.querySelectorAll('.banner-swiper').length) {
       }, i * 200);
     });
   }, 2050);
+  var bannerSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".banner-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: 'bullets',
+      clickable: true,
+      renderBullet: function renderBullet(index, className) {
+        return '<span class="' + className + '">0' + (index + 1) + '</span>';
+      }
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    autoplay: {
+      delay: 10000,
+      waitForTransition: false,
+      disableOnInteraction: false
+    },
+    speed: 2000,
+    direction: 'vertical',
+    mousewheel: {
+      invert: false
+    },
+    on: {
+      transitionEnd: function transitionEnd() {
+        var activeBullet = document.querySelector('.swiper-pagination-bullet-active');
+        document.querySelectorAll('.swiper-pagination-bullet').forEach(function (item) {
+          item.classList.remove('progress-init');
+        });
+        setTimeout(function () {
+          activeBullet.classList.add('progress-init');
+        }, 1);
+        document.querySelectorAll('.big-slider-item').forEach(function (item) {
+          item.classList.remove('bs-active');
+        });
+        var activeSlide = document.querySelector('.swiper-slide-active').getAttribute('data-slide');
+        document.querySelectorAll(".".concat(activeSlide)).forEach(function (element) {
+          element.classList.add('bs-active');
+        });
+      },
+      transitionStart: function transitionStart() {
+        document.querySelectorAll('.bs-ov').forEach(function (element) {
+          element.classList.add('trans-start');
+        });
+      },
+      slideNextTransitionStart: function slideNextTransitionStart() {
+        var overlayAnimNext = (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          translateY: ['100%', '0'],
+          easing: 'easeInOutCubic',
+          duration: 600,
+          autoplay: true,
+          loop: false,
+          targets: '.bs-ov',
+          delay: function delay(el, i) {
+            return i * 50;
+          }
+        });
+        var titleAnimNext = (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          autoplay: true,
+          loop: false,
+          targets: '.bs-active .title .span-line',
+          translateY: ['0', '-110%'],
+          easing: "easeInExpo",
+          duration: 650,
+          delay: animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"].stagger(100)
+        });
+      },
+      slideNextTransitionEnd: function slideNextTransitionEnd() {
+        var overlayAnimNextEnd = (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          translateY: ['0', '-100%'],
+          easing: 'easeInOutCubic',
+          duration: 600,
+          autoplay: true,
+          loop: false,
+          targets: '.bs-ov',
+          delay: function delay(el, i) {
+            return i * 50;
+          }
+        });
+        var titleAnimNextEnd = (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          autoplay: true,
+          loop: false,
+          targets: '.bs-active .title .span-line',
+          translateY: ['110%', '0'],
+          easing: "easeOutExpo",
+          duration: 650,
+          delay: animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"].stagger(100)
+        });
+      },
+      slidePrevTransitionStart: function slidePrevTransitionStart() {
+        var overlayAnimPrev = (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          translateY: ['-100%', '0'],
+          easing: 'easeInOutCubic',
+          duration: 600,
+          autoplay: true,
+          loop: false,
+          targets: '.bs-ov',
+          delay: function delay(el, i) {
+            return i * 50;
+          }
+        });
+        var titleAnimPrev = (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          autoplay: true,
+          loop: false,
+          targets: '.bs-active .title .span-line',
+          translateY: ['0', '110%'],
+          easing: "easeInExpo",
+          duration: 650,
+          delay: animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"].stagger(100, {
+            from: 'last'
+          })
+        });
+      },
+      slidePrevTransitionEnd: function slidePrevTransitionEnd() {
+        var overlayAnimPrev = (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          translateY: ['0', '100%'],
+          easing: 'easeInOutCubic',
+          duration: 600,
+          autoplay: true,
+          loop: false,
+          targets: '.bs-ov',
+          delay: function delay(el, i) {
+            return i * 50;
+          }
+        });
+        var titleAnimPrevEnd = (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          autoplay: true,
+          loop: false,
+          targets: '.bs-active .title .span-line',
+          translateY: ['-110%', '0'],
+          easing: "easeOutExpo",
+          duration: 650,
+          delay: animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"].stagger(100, {
+            from: 'last'
+          })
+        });
+      }
+    }
+  });
+  document.querySelector('.swiper-pagination-bullet-active').classList.add('progress-init');
 }
-var bannerSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".banner-swiper", {
-  slidesPerView: 1,
-  spaceBetween: 0,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    type: 'bullets',
-    clickable: true,
-    renderBullet: function renderBullet(index, className) {
-      return '<span class="' + className + '">0' + (index + 1) + '</span>';
-    }
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  },
-  // autoplay: {
-  //     delay: 10000,
-  //     waitForTransition: false,
-  //     disableOnInteraction: false
-  // },
-  speed: 1300,
-  direction: 'vertical',
-  mousewheel: {
-    invert: false
-  },
-  on: {
-    transitionEnd: function transitionEnd() {
-      var activeBullet = document.querySelector('.swiper-pagination-bullet-active');
-      activeBullet.classList.remove('progress-init');
-      setTimeout(function () {
-        activeBullet.classList.add('progress-init');
-      }, 1000);
-    },
-    transitionStart: function transitionStart() {
-      document.querySelectorAll('.bs-ov').forEach(function (element) {
-        element.classList.add('trans-start');
-      });
-    },
-    slideNextTransitionStart: function slideNextTransitionStart() {
-      var overlayAnimNext = (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
-        translateY: ['100%', '0'],
-        easing: 'easeInOutCubic',
-        duration: 600,
-        autoplay: true,
-        loop: false,
-        targets: '.bs-ov',
-        delay: function delay(el, i) {
-          return i * 50;
-        }
-      });
-    },
-    slideNextTransitionEnd: function slideNextTransitionEnd() {
-      var overlayAnimNextEnd = (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
-        translateY: ['0', '-100%'],
-        easing: 'easeInOutCubic',
-        duration: 600,
-        autoplay: true,
-        loop: false,
-        targets: '.bs-ov',
-        delay: function delay(el, i) {
-          return i * 50;
-        }
-      });
-    },
-    slidePrevTransitionStart: function slidePrevTransitionStart() {
-      var overlayAnimPrev = (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
-        translateY: ['-100%', '0'],
-        easing: 'easeInOutCubic',
-        duration: 600,
-        autoplay: true,
-        loop: false,
-        targets: '.bs-ov',
-        delay: function delay(el, i) {
-          return i * 50;
-        }
-      });
-    },
-    slidePrevTransitionEnd: function slidePrevTransitionEnd() {
-      var overlayAnimPrev = (0,animejs_lib_anime_es_js__WEBPACK_IMPORTED_MODULE_1__["default"])({
-        translateY: ['0', '100%'],
-        easing: 'easeInOutCubic',
-        duration: 600,
-        autoplay: true,
-        loop: false,
-        targets: '.bs-ov',
-        delay: function delay(el, i) {
-          return i * 50;
-        }
-      });
-    }
-  }
-});
-document.querySelector('.swiper-pagination-bullet-active').classList.add('progress-init');
 })();
 
 /******/ })()
