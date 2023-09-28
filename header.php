@@ -24,7 +24,6 @@
                 </div> -->
             </div>
         </div>
-
         <nav id="site-navigation" class="site-navigation full_screen light">
             <span class="menu-ov menu-ov-1"></span>
             <span class="menu-ov menu-ov-2"></span>
@@ -38,7 +37,12 @@
                 <div class="menu-main-menu-container">
                     <ul id="primary-menu" class="menu">
                         <li id="menu-item-349" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-349">
-                            <i class="sub-toggle icon-plus"><i></i></i>
+                            <i class="sub-toggle icon-plus">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                </svg>
+                            </i>
                             <a href="#" class="no-trans" data-hover="Home">Home</a>
                             <ul class="sub-menu">
                                 <li id="menu-item-350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-213 current_page_item menu-item-350 menu-item-hover">
@@ -110,7 +114,6 @@
         </nav>
     </header>
     <main>
-
     <!-- <div class="loader">
         <div class="loader__counter" data-count="99">100</div>
     </div> -->

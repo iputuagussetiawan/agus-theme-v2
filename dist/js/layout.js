@@ -17,6 +17,18 @@ __webpack_require__.r(__webpack_exports__);
 
 // example importing other Bootstrap Javascript Module
 
+var navItems = document.querySelectorAll('.menu .menu-item');
+navItems.forEach(function (element) {
+  //element.classList.remove('menu-item-hover');
+  element.addEventListener('mouseenter', function (event) {
+    var hoveredElement = event.target;
+    hoveredElement.classList.add('menu-item-hover');
+  });
+  element.addEventListener('mouseleave', function (event) {
+    var hoveredElement = event.target;
+    hoveredElement.classList.remove('menu-item-hover');
+  });
+});
 
 /***/ }),
 

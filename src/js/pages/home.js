@@ -1,5 +1,6 @@
 import Swiper from 'swiper/bundle';
 import anime from 'animejs/lib/anime.es.js';
+import { gsap } from "gsap";
 import 'swiper/css/bundle';
 
 import Navbar from '../modules/Navbar'
@@ -82,6 +83,10 @@ if (document.querySelectorAll('.banner-swiper').length) {
                 });
             },
             slideNextTransitionStart: function () {
+
+                var tl = gsap.timeline();
+
+
                 let overlayAnimNext = anime({
                     translateY: ['100%', '0'],
                     easing: 'easeInOutCubic',
@@ -93,6 +98,7 @@ if (document.querySelectorAll('.banner-swiper').length) {
                         return i * 50;
                     },
                 });
+                
                 var titleAnimNext = anime({
                     autoplay: true,
                     loop: false,

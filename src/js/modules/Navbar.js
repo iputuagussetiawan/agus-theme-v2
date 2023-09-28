@@ -4,7 +4,13 @@ class Navbar {
         this.body=document.querySelector("body");
         this.burgerMenu = document.querySelector("#hamburger")
         this.btnToggler=document.querySelector('.menu-toggle');
+        this.siteHeader=document.querySelector('.site-header');
+        this.siteNavigation=document.querySelector('.site-navigation');
+        this.menuOvElements = document.querySelectorAll('.menu-ov');
+        this.menuWrapper = document.querySelector('.menu-wrapper');
+        this.menuItems = document.querySelectorAll('.menu > li > a');
 
+        this.subToggle = document.querySelector('.sub-toggle');
     }
     // 2. events
     events() {
@@ -25,13 +31,65 @@ class Navbar {
     }
     openSideMenu(){
         //this.burgerMenu.classList.remove("closed");
+        this.siteHeader.classList.add("active");
+        this.siteNavigation.classList.add("active");
+        this.siteNavigation.classList.add("nav-open");
+
+        
+
+        setTimeout(() => {
+            this.subToggle.classList.add("st-in");
+        }, 500);
+
+
+        
+        
+        this.menuOvElements.forEach(element => {
+            element.classList.add('menu-ov-in');
+        });
+
+        if (this.menuWrapper) {
+            this.menuWrapper.style.visibility = 'visible';
+        }
+
+        setTimeout(() => {
+            this.menuItems.forEach((element, i) => {
+                setTimeout(() => {
+                    element.classList.add('menu-item-comes');
+                    }, i * 100);
+                });
+        }, 200);
+
         this.burgerMenu.classList.add("is-active");
         this.body.classList.add('no-scroll');
         this.isClosed = true;
     }
     closeSideMenu(){
+        this.siteHeader.classList.remove("active");
+        this.siteNavigation.classList.remove("active");
+        this.subToggle.classList.remove("st-in");
+        this.subToggle.classList.remove("st-active");
+
+        setTimeout(() => {
+            this.siteNavigation.classList.remove("nav-open");
+        }, 400);
+
+        this.menuOvElements.forEach(element => {
+            element.classList.remove('menu-ov-in');
+        });
         this.burgerMenu.classList.remove("is-active");
-        //this.burgerMenu.classList.add("closed");
+        //this.burgerMenu.classList.add("closed")
+        
+
+        // if (this.menuWrapper) {
+        //     this.menuWrapper.style.visibility = 'hidden';
+        // }
+
+        this.menuItems.forEach((element, i) => {
+            setTimeout(() => {
+                element.classList.remove('menu-item-comes');
+            }, i * 100);
+        });
         this.body.classList.remove('no-scroll');
         this.isClosed  = false;
     }

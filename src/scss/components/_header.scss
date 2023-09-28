@@ -293,23 +293,17 @@
 }
 
 .sub-toggle {
+    position: absolute;
     display: inline-block;
-    font-size: 20px;
-    margin-right: 10px;
+    top: 20px;
+    left: 6px;
+    font-size: 16px;
+    margin-right: 0px;
     color: rgba(147, 147, 147, 0.6);
     cursor: pointer;
-    -webkit-transition: all .3s ease;
-    -o-transition: all .3s ease;
     transition: all .3s ease;
-    position: absolute;
-    left: 6px;
-    top: 10px;
     opacity: 0;
-
-    -webkit-transform: rotate(135deg);
-
-    -ms-transform: rotate(135deg);
-
+    line-height: 1;
     transform: rotate(135deg);
 }
 
