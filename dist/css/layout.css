@@ -46,6 +46,10 @@
   margin: 0;
 }
 
+.site-branding .site-title {
+  display: inline-block;
+}
+
 .site-title a,
 .site-description {
   color: #ededed;
