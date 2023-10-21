@@ -24,18 +24,22 @@ class Navbar {
 
         for (const subToggle of this.subToggles) {
             subToggle.addEventListener('click', function(event) {
-                const allSubMenus=document.querySelectorAll('.sub-menu')
                 const allSubToggle=document.querySelectorAll('.sub-toggle')
-                allSubMenus.forEach((allSubMenu) => {
-                    allSubMenu.classList.remove('sub-menu-in');
-                });
-                allSubToggle.forEach((subToggle) => {
-                    subToggle.classList.remove('st-active');
-                });
                 subToggle.classList.toggle('st-active');
                 const parentLi = subToggle.closest('li');
                 let openSub = parentLi.querySelector('.sub-menu');
                 openSub.classList.toggle('sub-menu-in');
+
+                allSubToggle.forEach((otherSubToggle) => {
+                    const otherParentLi = otherSubToggle.closest('li');
+                    const otherOpenSub=otherParentLi.querySelector('.sub-menu');
+                    if (otherSubToggle !== subToggle) {
+                        otherSubToggle.classList.remove('st-active');
+                    }
+                    if(otherOpenSub !==openSub){
+                        otherOpenSub.classList.remove('sub-menu-in');
+                    }
+                });
             })
         }
     }

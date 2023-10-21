@@ -1376,18 +1376,21 @@ var Navbar = /*#__PURE__*/function () {
         var _loop = function _loop() {
           var subToggle = _step.value;
           subToggle.addEventListener('click', function (event) {
-            var allSubMenus = document.querySelectorAll('.sub-menu');
             var allSubToggle = document.querySelectorAll('.sub-toggle');
-            allSubMenus.forEach(function (allSubMenu) {
-              allSubMenu.classList.remove('sub-menu-in');
-            });
-            allSubToggle.forEach(function (subToggle) {
-              subToggle.classList.remove('st-active');
-            });
             subToggle.classList.toggle('st-active');
             var parentLi = subToggle.closest('li');
             var openSub = parentLi.querySelector('.sub-menu');
             openSub.classList.toggle('sub-menu-in');
+            allSubToggle.forEach(function (otherSubToggle) {
+              var otherParentLi = otherSubToggle.closest('li');
+              var otherOpenSub = otherParentLi.querySelector('.sub-menu');
+              if (otherSubToggle !== subToggle) {
+                otherSubToggle.classList.remove('st-active');
+              }
+              if (otherOpenSub !== openSub) {
+                otherOpenSub.classList.remove('sub-menu-in');
+              }
+            });
           });
         };
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
