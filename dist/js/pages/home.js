@@ -1357,6 +1357,7 @@ var Navbar = /*#__PURE__*/function () {
     this.menuOvElements = document.querySelectorAll('.menu-ov');
     this.menuWrapper = document.querySelector('.menu-wrapper');
     this.menuItems = document.querySelectorAll('.menu > li > a');
+    this.subToggles = document.querySelectorAll('.sub-toggle');
     this.subToggle = document.querySelector('.sub-toggle');
   }
   // 2. events
@@ -1369,6 +1370,34 @@ var Navbar = /*#__PURE__*/function () {
         //console.log('tests')
         _this.burgerTime();
       });
+      var _iterator = _createForOfIteratorHelper(this.subToggles),
+        _step;
+      try {
+        var _loop = function _loop() {
+          var subToggle = _step.value;
+          subToggle.addEventListener('click', function (event) {
+            var allSubMenus = document.querySelectorAll('.sub-menu');
+            var allSubToggle = document.querySelectorAll('.sub-toggle');
+            allSubMenus.forEach(function (allSubMenu) {
+              allSubMenu.classList.remove('sub-menu-in');
+            });
+            allSubToggle.forEach(function (subToggle) {
+              subToggle.classList.remove('st-active');
+            });
+            subToggle.classList.toggle('st-active');
+            var parentLi = subToggle.closest('li');
+            var openSub = parentLi.querySelector('.sub-menu');
+            openSub.classList.toggle('sub-menu-in');
+          });
+        };
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          _loop();
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
     }
     // 3. methods (function, action...)
   }, {
@@ -1389,7 +1418,9 @@ var Navbar = /*#__PURE__*/function () {
       this.siteNavigation.classList.add("active");
       this.siteNavigation.classList.add("nav-open");
       setTimeout(function () {
-        _this2.subToggle.classList.add("st-in");
+        _this2.subToggles.forEach(function (subToggle) {
+          subToggle.classList.add('st-in');
+        });
       }, 500);
       this.menuOvElements.forEach(function (element) {
         element.classList.add('menu-ov-in');
@@ -1414,8 +1445,10 @@ var Navbar = /*#__PURE__*/function () {
       var _this3 = this;
       this.siteHeader.classList.remove("active");
       this.siteNavigation.classList.remove("active");
-      this.subToggle.classList.remove("st-in");
-      this.subToggle.classList.remove("st-active");
+      this.subToggles.forEach(function (subToggle) {
+        subToggle.classList.remove('st-in');
+        subToggle.classList.remove('st-active');
+      });
       setTimeout(function () {
         _this3.siteNavigation.classList.remove("nav-open");
       }, 400);
@@ -1440,11 +1473,11 @@ var Navbar = /*#__PURE__*/function () {
   }, {
     key: "hoverDropdown",
     value: function hoverDropdown() {
-      var _iterator = _createForOfIteratorHelper(this.dropdowns),
-        _step;
+      var _iterator2 = _createForOfIteratorHelper(this.dropdowns),
+        _step2;
       try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var dropdown = _step.value;
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var dropdown = _step2.value;
           dropdown.addEventListener('mouseenter', function (event) {
             var target = event.target;
             var dropdownToggle = target.querySelector('.dropdown-toggle');
@@ -1471,9 +1504,9 @@ var Navbar = /*#__PURE__*/function () {
           });
         }
       } catch (err) {
-        _iterator.e(err);
+        _iterator2.e(err);
       } finally {
-        _iterator.f();
+        _iterator2.f();
       }
     }
   }, {

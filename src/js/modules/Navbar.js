@@ -10,6 +10,8 @@ class Navbar {
         this.menuWrapper = document.querySelector('.menu-wrapper');
         this.menuItems = document.querySelectorAll('.menu > li > a');
 
+        this.subToggles=document.querySelectorAll('.sub-toggle');
+
         this.subToggle = document.querySelector('.sub-toggle');
     }
     // 2. events
@@ -19,6 +21,23 @@ class Navbar {
             //console.log('tests')
             this.burgerTime() 
         });
+
+        for (const subToggle of this.subToggles) {
+            subToggle.addEventListener('click', function(event) {
+                const allSubMenus=document.querySelectorAll('.sub-menu')
+                const allSubToggle=document.querySelectorAll('.sub-toggle')
+                allSubMenus.forEach((allSubMenu) => {
+                    allSubMenu.classList.remove('sub-menu-in');
+                });
+                allSubToggle.forEach((subToggle) => {
+                    subToggle.classList.remove('st-active');
+                });
+                subToggle.classList.toggle('st-active');
+                const parentLi = subToggle.closest('li');
+                let openSub = parentLi.querySelector('.sub-menu');
+                openSub.classList.toggle('sub-menu-in');
+            })
+        }
     }
     // 3. methods (function, action...)
     
@@ -34,11 +53,10 @@ class Navbar {
         this.siteHeader.classList.add("active");
         this.siteNavigation.classList.add("active");
         this.siteNavigation.classList.add("nav-open");
-
-        
-
         setTimeout(() => {
-            this.subToggle.classList.add("st-in");
+            this.subToggles.forEach((subToggle) => {
+                subToggle.classList.add('st-in');
+            });
         }, 500);
 
 
@@ -67,8 +85,10 @@ class Navbar {
     closeSideMenu(){
         this.siteHeader.classList.remove("active");
         this.siteNavigation.classList.remove("active");
-        this.subToggle.classList.remove("st-in");
-        this.subToggle.classList.remove("st-active");
+        this.subToggles.forEach((subToggle) => {
+            subToggle.classList.remove('st-in');
+            subToggle.classList.remove('st-active');
+        });
 
         setTimeout(() => {
             this.siteNavigation.classList.remove("nav-open");
