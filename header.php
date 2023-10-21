@@ -9,7 +9,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body class="layout-dark">
     <?php wp_body_open(); ?>
     <header id="masthead" class="site-header light loaded">
         <div class="site-branding">
@@ -112,16 +112,16 @@
             <div class="menu-widget-wrapper mww-1">
                 <div class="menu-widget">
                     <div class="menu-widget-title">WE ARE ALWAYS HERE</div>
-                    <h5>19, Avenue du Président Wilson 75116, Paris</h5>
-                    <h5>+9 (0) 512 69 78</h5>
+                    <h5>Tabanan</h5>
+                    <h5>+62 81237772015</h5>
                 </div>
             </div>
             <div class="menu-widget-wrapper mww-2">
                 <div class="scrolling-button">
                     <a href="mailto:">
                         <div class="marquee-wrapper">
-                            <div class="marquee">hello@pethemes.com</div>
-                            <div class="marquee">hello@pethemes.com</div>
+                            <div class="marquee">agussetiawaniputu@gmail.com</div>
+                            <div class="marquee">agussetiawaniputu@gmail.com</div>
                         </div>
                     </a>
                 </div>

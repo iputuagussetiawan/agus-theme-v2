@@ -1,6 +1,8 @@
 {
     "/dist/js/layout.js": "/dist/js/layout.js",
     "/dist/js/pages/home.js": "/dist/js/pages/home.js",
+    "/dist/js/pages/list-carousel.js": "/dist/js/pages/list-carousel.js",
+    "/dist/css/pages/list-carousel.css": "/dist/css/pages/list-carousel.css",
     "/dist/css/pages/home.css": "/dist/css/pages/home.css",
     "/dist/css/tmdr-admin.css": "/dist/css/tmdr-admin.css",
     "/dist/css/layout.css": "/dist/css/layout.css"

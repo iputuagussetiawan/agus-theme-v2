@@ -12778,4 +12778,8 @@ textarea.form-control-lg {
   height: auto;
 }
 
+body.layout-dark {
+  background-color: #121212;
+}
+
 /*# sourceMappingURL=layout.css.map*/

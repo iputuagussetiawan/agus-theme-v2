@@ -65,7 +65,11 @@ function tmdr_script_enqueue() {
         tmdr_print_css('home-css', 'pages/home.css');
         tmdr_print_js('home-js', 'pages/home.js');
     }
-    
+
+    if (is_page_template('page-listcarousel.php')) {
+        tmdr_print_css('listcarousel-css', 'pages/list-carousel.css');
+        tmdr_print_js('listcarousel-js', 'pages/list-carousel.js');
+    }
     
     // example code to add CSS and JS to Singular Page
     /*

@@ -5,11 +5,13 @@ mix.sass('src/scss/layout.scss', 'dist/css/')
 
 mix.js('src/js/layout.js', 'dist/js/')
     .js('src/js/pages/home.js', 'dist/js/pages/')
+    .js('src/js/pages/list-carousel.js', 'dist/js/pages/')
     .sourceMaps(true, 'source-map');
 
 // Wordpress Custom Admin Login CSS
 mix.sass('src/scss/tmdr-admin.scss', 'dist/css/')
     .sass('src/scss/pages/home.scss', 'dist/css/pages/')
+    .sass('src/scss/pages/list-carousel.scss', 'dist/css/pages/')
     .sourceMaps(true, 'source-map');
 
 
