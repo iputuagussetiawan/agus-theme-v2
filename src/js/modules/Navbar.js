@@ -62,10 +62,6 @@ class Navbar {
                 subToggle.classList.add('st-in');
             });
         }, 500);
-
-
-        
-        
         this.menuOvElements.forEach(element => {
             element.classList.add('menu-ov-in');
         });
@@ -73,7 +69,6 @@ class Navbar {
         if (this.menuWrapper) {
             this.menuWrapper.style.visibility = 'visible';
         }
-
         setTimeout(() => {
             this.menuItems.forEach((element, i) => {
                 setTimeout(() => {
@@ -81,7 +76,16 @@ class Navbar {
                     }, i * 100);
                 });
         }, 200);
-
+        setTimeout(() => {
+            document.querySelectorAll('.mww-1, .mww-2, .mww-3').forEach(element => {
+                element.classList.add('mww-in');
+            });
+            document.querySelectorAll('.widget-socials li').forEach((element, i) => {
+                setTimeout(() => {
+                    element.classList.add('so-li-in');
+                }, i * 40);
+            });
+        }, 300);
         this.burgerMenu.classList.add("is-active");
         this.body.classList.add('no-scroll');
         this.isClosed = true;
@@ -114,8 +118,29 @@ class Navbar {
                 element.classList.remove('menu-item-comes');
             }, i * 100);
         });
+
+        const menuLinks = Array.from(document.querySelectorAll('.menu > li > a'));
+
+        menuLinks.forEach((element, i) => {
+            setTimeout(() => {
+                element.classList.remove('menu-item-comes');
+            }, i * 20);
+        });
+
+        const mwwElements = document.querySelectorAll('.mww-1, .mww-2, .mww-3');
+            mwwElements.forEach(element => {
+            element.classList.remove('mww-in');
+        });
+
+        const socialLinks = document.querySelectorAll('.widget-socials li');
+            socialLinks.forEach(element => {
+            element.classList.remove('so-li-in');
+        });
+
         this.body.classList.remove('no-scroll');
         this.isClosed  = false;
+
+
     }
     hoverDropdown(){
         for (const dropdown of this.dropdowns) {

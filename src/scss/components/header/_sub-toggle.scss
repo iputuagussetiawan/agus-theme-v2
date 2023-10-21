@@ -1,0 +1,30 @@
+.sub-toggle {
+    position: absolute;
+    display: inline-block;
+    top: 20px;
+    left: 6px;
+    font-size: 16px;
+    margin-right: 0px;
+    color: rgba(147, 147, 147, 0.6);
+    cursor: pointer;
+    transition: all .3s ease;
+    opacity: 0;
+    line-height: 1;
+    transform: rotate(135deg);
+
+    &.st-in {
+        opacity: 1;
+    
+        -webkit-transform: rotate(0);
+    
+        -ms-transform: rotate(0);
+    
+        transform: rotate(0);
+    }
+    &.st-active {
+        -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        transform: rotate(135deg);
+        color: #fff
+    }
+}

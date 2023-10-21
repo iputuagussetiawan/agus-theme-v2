@@ -18,10 +18,10 @@
                     <h4 class="site-title"><a href="" rel="home">AG'Design</a></h4>
                     <p class="site-description"></p>
                 </div>
-                <!-- <div class="light-logo">
-                    <h4 class="site-title"><a href="http://osteam.test/" rel="home">OS Team</a></h4>
+                <div class="light-logo">
+                    <h4 class="site-title"><a href="" rel="home">AG'Design</a></h4>
                     <p class="site-description"></p>
-                </div> -->
+                </div>
             </div>
         </div>
         <nav id="site-navigation" class="site-navigation full_screen light">
@@ -118,10 +118,10 @@
             </div>
             <div class="menu-widget-wrapper mww-2">
                 <div class="scrolling-button">
-                    <a href="mailto:%20hello@pethemes.com">
-                        <div style="width: 100000px; transform: translateX(300px); animation: 14.4716s linear 0s 1 normal none paused marqueeAnimation-3938631;" class="js-marquee-wrapper">
-                            <div class="js-marquee" style="margin-right: 20px; float: left;">hello@pethemes.com</div>
-                            <div class="js-marquee" style="margin-right: 20px; float: left;">hello@pethemes.com</div>
+                    <a href="mailto:">
+                        <div class="marquee-wrapper">
+                            <div class="marquee">hello@pethemes.com</div>
+                            <div class="marquee">hello@pethemes.com</div>
                         </div>
                     </a>
                 </div>

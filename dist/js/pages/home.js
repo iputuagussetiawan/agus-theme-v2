@@ -1438,6 +1438,16 @@ var Navbar = /*#__PURE__*/function () {
           }, i * 100);
         });
       }, 200);
+      setTimeout(function () {
+        document.querySelectorAll('.mww-1, .mww-2, .mww-3').forEach(function (element) {
+          element.classList.add('mww-in');
+        });
+        document.querySelectorAll('.widget-socials li').forEach(function (element, i) {
+          setTimeout(function () {
+            element.classList.add('so-li-in');
+          }, i * 40);
+        });
+      }, 300);
       this.burgerMenu.classList.add("is-active");
       this.body.classList.add('no-scroll');
       this.isClosed = true;
@@ -1469,6 +1479,20 @@ var Navbar = /*#__PURE__*/function () {
         setTimeout(function () {
           element.classList.remove('menu-item-comes');
         }, i * 100);
+      });
+      var menuLinks = Array.from(document.querySelectorAll('.menu > li > a'));
+      menuLinks.forEach(function (element, i) {
+        setTimeout(function () {
+          element.classList.remove('menu-item-comes');
+        }, i * 20);
+      });
+      var mwwElements = document.querySelectorAll('.mww-1, .mww-2, .mww-3');
+      mwwElements.forEach(function (element) {
+        element.classList.remove('mww-in');
+      });
+      var socialLinks = document.querySelectorAll('.widget-socials li');
+      socialLinks.forEach(function (element) {
+        element.classList.remove('so-li-in');
       });
       this.body.classList.remove('no-scroll');
       this.isClosed = false;

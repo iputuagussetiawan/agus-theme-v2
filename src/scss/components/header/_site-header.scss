@@ -1,0 +1,49 @@
+.site-header {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    pointer-events: none;
+    -webkit-transition: opacity .5s ease;
+    -o-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+    .light-logo {
+        display: none;
+    }
+    .dark-logo {
+        display: block;
+    }
+    &.light .light-logo {
+        display: block;
+    }
+    &.light .dark-logo {
+        display: none;
+    }
+    &.light-nav-active .light-logo,
+    &.dark-nav-active .dark-logo {
+        display: none;
+    }
+    &.light-nav-active .dark-logo,
+    &.dark-nav-active .light-logo {
+        display: block
+    }
+    &.dark-nav-active.toggle-line,
+    &.light .toggle-line {
+        background-color: #ededed;
+    }
+
+    &.light .site-navigation.classic .menu > li > a,
+    &.light .site-navigation.classic .sub-menu li a,
+    &.light .menu > li > .sub-menu > li.has-children::before {
+        color: rgba(255, 255, 255, 0.64);
+    }
+    &.light .site-navigation.classic .menu > li > a span::after,
+    &.light .site-navigation.classic .menu li > .sub-menu li a:hover {
+        color: #fff
+    }
+
+    &.light .site-navigation.classic .menu > li > .sub-menu {
+        background-color: #121212;
+    }
+}
