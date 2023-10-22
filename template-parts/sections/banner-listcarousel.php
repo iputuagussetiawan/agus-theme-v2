@@ -1,5 +1,7 @@
 <div class="fullscreen portfolio-showcase list-carousel list-init">
-    <div class="list-titles swiper-pagination-bullets">
+    <div class="list-titles-wrapper">
+        <div class="list-titles swiper-pagination-bullets">
+        </div>
     </div>
     <div class="list-images">
         <div class="swiper-wrapper">
@@ -53,7 +55,7 @@
                     <img decoding="async" src="http://osteam.test/wp-content/uploads/2020/07/lc_cov-5.jpg" alt="List Project Image">
                 </div>
             </div>
-            <!-- <div class="list-image swiper-slide slide-5" >
+            <div class="list-image swiper-slide slide-5" >
                 <a href="test.php"></a>
                 <div class="list-p-title">Havet</div>
                 <div class="list-titles-meta">
@@ -100,7 +102,7 @@
                 <div class="list-image-wrapper">
                     <img decoding="async" src="http://osteam.test/wp-content/uploads/2020/07/lc_cov-4-1.jpg" alt="List Project Image">
                 </div>
-            </div> -->
+            </div>
         </div>
         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
     </div>

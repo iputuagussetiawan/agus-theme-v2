@@ -30,13 +30,23 @@
 }
 
 .list-titles {
-    padding-top: 200px;
+    // padding-top: 200px;
     position: absolute !important;
     left: 15% !important;
     top: 0 !important;
     z-index: 2 !important;
     height: 100vh;
     width: auto !important;
+    overflow-x: hidden;
+    // overflow-y: auto;
+}
+
+.list-titles-inner{
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 70%;
+    position: relative;
+    right: -17px;
 }
 
 .list-title {
@@ -125,12 +135,9 @@
 
 .list-titles-meta {
     position: absolute;
-    left: 73%;
-    top: 0;
+    top: 0px;
+    right: 0px;
     z-index: 1;
-    -webkit-transform: translateY(-120%) translateX(-50%);
-    -ms-transform: translateY(-120%) translateX(-50%);
-    transform: translateY(-120%) translateX(-50%);
     width: 25vw;
     text-align: center;
     overflow: hidden;
@@ -253,6 +260,7 @@
 }
 
 .list-image {
+    padding-top: 50px;
     width: 55% !important;
     height: auto !important;
     max-height: 550px;

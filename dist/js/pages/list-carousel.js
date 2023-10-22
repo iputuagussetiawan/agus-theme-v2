@@ -12076,9 +12076,9 @@ if (document.querySelectorAll('.list-titles').length > 0) {
       element.setAttribute('data-hover', title);
     }
   });
-  var listTitles = document.querySelectorAll('.list-title');
+  var _listTitles = document.querySelectorAll('.list-title');
   var listScroll = document.querySelector('.list-scroll');
-  listTitles.forEach(function (title) {
+  _listTitles.forEach(function (title) {
     title.addEventListener('mouseenter', function () {
       var slidePush = title.dataset.push;
       listImagesSwiper.slideTo(slidePush);
@@ -12095,6 +12095,22 @@ if (document.querySelectorAll('.list-titles').length > 0) {
   //     listScroll.classList.add('hidden');
   // });
 }
+
+var listTitles = document.querySelector('.list-titles');
+
+// Create a new div element to wrap the <a> elements
+var newDiv = document.createElement('div');
+newDiv.className = 'list-titles-inner'; // Set the class for the new div
+
+// Loop through all the <a> elements and append them to the new div
+var aElements = listTitles.querySelectorAll('a');
+aElements.forEach(function (a) {
+  newDiv.appendChild(a);
+});
+
+// Append the new div with the wrapped <a> elements back to the parent element
+listTitles.appendChild(newDiv);
+
 // if ($('.list-titles').length > 0) {
 //     $('.line').addClass('line-arange');
 //     $('.list-image').each(function (i) {

@@ -164,6 +164,22 @@ if (document.querySelectorAll('.list-titles').length > 0) {
     // });
     
 }
+const listTitles = document.querySelector('.list-titles');
+
+// Create a new div element to wrap the <a> elements
+const newDiv = document.createElement('div');
+newDiv.className = 'list-titles-inner'; // Set the class for the new div
+
+// Loop through all the <a> elements and append them to the new div
+const aElements = listTitles.querySelectorAll('a');
+aElements.forEach((a) => {
+  newDiv.appendChild(a);
+});
+
+// Append the new div with the wrapped <a> elements back to the parent element
+listTitles.appendChild(newDiv);
+
+
 // if ($('.list-titles').length > 0) {
 //     $('.line').addClass('line-arange');
 //     $('.list-image').each(function (i) {
