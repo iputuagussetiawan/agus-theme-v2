@@ -30,14 +30,17 @@
 }
 
 .list-titles {
+    padding-top: 200px;
     position: absolute !important;
-    left: 15%;
-    top: 0;
-    z-index: 2;
+    left: 15% !important;
+    top: 0 !important;
+    z-index: 2 !important;
     height: 100vh;
+    width: auto !important;
 }
 
 .list-title {
+    
     display: block;
     font-size: 60px;
     line-height: 70px;
@@ -56,6 +59,7 @@
     -webkit-transition: all .8s;
     -o-transition: all .8s;
     transition: all .8s;
+    text-decoration: none;
 }
 
 .list-title:hover {
@@ -73,6 +77,9 @@
 
 .layout-dark .list-carousel .list-title {
     color: rgba(255, 255, 255, 0.1);
+}
+.layout-dark .list-title::after {
+    color: #ededed;
 }
 
 .list-title::after {
@@ -207,9 +214,9 @@
     margin-right: 0;
 }
 
-.list-titles {
-    pointer-events: none;
-}
+// .list-titles {
+//     pointer-events: none;
+// }
 
 .list-titles-fraction,
 .list-carousel-pagination {
@@ -230,12 +237,13 @@
 
 .list-images {
     position: relative;
-    bottom: 0;
+    top: 150px;
     width: 100%;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 0
+    padding: 0;
+    overflow: hidden;
 }
 
 .list-images .swiper-wrapper {
@@ -246,12 +254,14 @@
 
 .list-image {
     width: 55% !important;
-    height: 55% !important;
+    height: auto !important;
+    max-height: 550px;
     position: relative !important;
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+
 }
 
 
