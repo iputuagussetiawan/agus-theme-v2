@@ -1,9 +1,14 @@
 import Swiper from 'swiper/bundle';
 import anime from 'animejs/lib/anime.es.js';
+import MouseFollower from "mouse-follower";
 import { gsap } from "gsap";
 import 'swiper/css/bundle';
 import Navbar from '../modules/Navbar'
 const navbar=new Navbar();
+
+MouseFollower.registerGSAP(gsap);
+
+const cursor = new MouseFollower();
 
 document.addEventListener("DOMContentLoaded", () => {
     navbar.events();

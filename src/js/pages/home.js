@@ -1,7 +1,11 @@
 import Swiper from 'swiper/bundle';
 import anime from 'animejs/lib/anime.es.js';
+import MouseFollower from "mouse-follower";
 import { gsap } from "gsap";
 import 'swiper/css/bundle';
+MouseFollower.registerGSAP(gsap);
+
+const cursor = new MouseFollower();
 
 import Navbar from '../modules/Navbar'
 const navbar=new Navbar();

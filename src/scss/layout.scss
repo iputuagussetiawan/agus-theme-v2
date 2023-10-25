@@ -2,6 +2,7 @@
 @use './components/header/_header.scss' as *;
 @use './components/ui/_burger-menu.scss' as *;
 
+
 // main Bootstrap Module
 //@import 'config/_init-bootstrap.scss';
 
@@ -18,6 +19,8 @@
         xxl: 83%
     ),
 );
+
+@import "~mouse-follower/dist/mouse-follower.min.css";
 
 
 // |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾| //

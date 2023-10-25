@@ -29,7 +29,7 @@
             <span class="menu-ov menu-ov-2"></span>
             <span class="menu-ov menu-ov-3"></span>
             <span class="menu-ov menu-ov-4"></span>
-            <div id="hamburger" class="menu-toggle burger-menu">
+            <div id="hamburger" class="menu-toggle burger-menu" data-cursor-text="Menu" data-cursor-stick data-cursor="-menu"> 
                 <span class="burger-menu__line in toggle-line toggle-line-1 toggle-line-in"></span>
                 <span class="burger-menu__line in toggle-line toggle-line-2 toggle-line-in"></span>
             </div>
@@ -40,7 +40,7 @@
                             <i class="sub-toggle icon-plus">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18 12.998h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5v-5a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2z"/></svg>
                             </i>
-                            <a href="#" class="no-trans" data-hover="Home">Home</a>
+                            <a href="#" class="no-trans" data-hover="Home" data-cursor-text="Explore" >Home</a>
                             <ul class="sub-menu">
                                 <li id="menu-item-350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-213 current_page_item menu-item-350 menu-item-hover">
                                     <a href="http://osteam.test/" aria-current="page">Big Slider</a>
@@ -69,7 +69,7 @@
                             <i class="sub-toggle icon-plus">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z"/></svg>
                             </i>
-                            <a href="#" class="no-trans" data-hover="Home">Home</a>
+                            <a href="#" class="no-trans" data-hover="Home" data-cursor-text="Explore">Home</a>
                             <ul class="sub-menu">
                                 <li id="menu-item-350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-213 current_page_item menu-item-350 menu-item-hover">
                                     <a href="http://osteam.test/" aria-current="page">Big Slider</a>
@@ -95,7 +95,7 @@
                             </ul>
                         </li>
                         <li id="menu-item-342" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-342">
-                            <a href="http://osteam.test/works/" data-hover="Works" class="">Works</a>
+                            <a href="http://osteam.test/works/" data-hover="Works" class="" data-cursor-text="Explore">Works</a>
                         </li>
                         <li id="menu-item-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46">
                             <a href="http://osteam.test/about/" data-hover="About" class="">About</a>

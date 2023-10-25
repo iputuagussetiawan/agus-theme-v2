@@ -15,7 +15,7 @@
             <a href="">tetes</a>
             <div class="banner-content__top top">
                 <div class="banner-content__category category"><span class="banner-content__category-text">Video/Animation</span></div>
-                <div class="banner-content__title title">
+                <div class="banner-content__title title" data-cursor-text="Explore">
                         <span class="banner-content__title-text span-line">Sand of Time </span>
                 </div>
             </div>
@@ -24,7 +24,7 @@
             <a href=""></a>
             <div class="banner-content__top top">
                 <div class="banner-content__category category in"><span class="banner-content__category-text">Photography</span></div>
-                <div class="banner-content__title title">
+                <div class="banner-content__title title" data-cursor-text="Explore">
                     <span class="banner-content__title-text span-line">Men’s Cave </span>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <a href="http://osteam.test/project/deals-app/"></a>
             <div class="banner-content__top top">
                 <div class="banner-content__category category"><span class="banner-content__category-text">UX/UI Design</span></div>
-                <div class="banner-content__title title">
+                <div class="banner-content__title title" data-cursor-text="Explore">
                    
                         <span class="banner-content__title-text span-line">Deals App </span>
                    

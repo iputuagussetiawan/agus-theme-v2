@@ -2197,10 +2197,10 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/dist/js/layout": 0,
+/******/ 			"dist/css/layout": 0,
 /******/ 			"dist/css/pages/list-carousel": 0,
 /******/ 			"dist/css/pages/home": 0,
-/******/ 			"dist/css/tmdr-admin": 0,
-/******/ 			"dist/css/layout": 0
+/******/ 			"dist/css/tmdr-admin": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -2250,11 +2250,11 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["dist/css/pages/list-carousel","dist/css/pages/home","dist/css/tmdr-admin","dist/css/layout"], () => (__webpack_require__("./src/js/layout.js")))
-/******/ 	__webpack_require__.O(undefined, ["dist/css/pages/list-carousel","dist/css/pages/home","dist/css/tmdr-admin","dist/css/layout"], () => (__webpack_require__("./src/scss/layout.scss")))
-/******/ 	__webpack_require__.O(undefined, ["dist/css/pages/list-carousel","dist/css/pages/home","dist/css/tmdr-admin","dist/css/layout"], () => (__webpack_require__("./src/scss/tmdr-admin.scss")))
-/******/ 	__webpack_require__.O(undefined, ["dist/css/pages/list-carousel","dist/css/pages/home","dist/css/tmdr-admin","dist/css/layout"], () => (__webpack_require__("./src/scss/pages/home.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["dist/css/pages/list-carousel","dist/css/pages/home","dist/css/tmdr-admin","dist/css/layout"], () => (__webpack_require__("./src/scss/pages/list-carousel.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/css/layout","dist/css/pages/list-carousel","dist/css/pages/home","dist/css/tmdr-admin"], () => (__webpack_require__("./src/js/layout.js")))
+/******/ 	__webpack_require__.O(undefined, ["dist/css/layout","dist/css/pages/list-carousel","dist/css/pages/home","dist/css/tmdr-admin"], () => (__webpack_require__("./src/scss/layout.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/css/layout","dist/css/pages/list-carousel","dist/css/pages/home","dist/css/tmdr-admin"], () => (__webpack_require__("./src/scss/tmdr-admin.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/css/layout","dist/css/pages/list-carousel","dist/css/pages/home","dist/css/tmdr-admin"], () => (__webpack_require__("./src/scss/pages/home.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["dist/css/layout","dist/css/pages/list-carousel","dist/css/pages/home","dist/css/tmdr-admin"], () => (__webpack_require__("./src/scss/pages/list-carousel.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

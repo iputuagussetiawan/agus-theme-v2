@@ -7,8 +7,8 @@
         <div class="swiper-wrapper">
             <div class="list-image swiper-slide slide-1" >
                 <a href="test.php"></a>
-                <div class="list-p-title">Deals App</div>
-                <div class="list-titles-meta">
+                <div class="list-p-title">Deals Appdfsd</div>
+                <div class="list-titles-meta" data-cursor-text="Explore">
                     <span> Stoko</span>
                     <span> 2014</span>
                     <span> IOS/Android</span>
@@ -19,8 +19,8 @@
             </div>
             <div class="list-image swiper-slide slide-2">
                 <a href="test.php"></a>
-                <div class="list-p-title">Sand of Time</div>
-                <div class="list-titles-meta">
+                <div class="list-p-title" data-cursor-text="Explore">Sand of Time</div>
+                <div class="list-titles-meta" data-cursor-text="Explore" >
                     <span> Chiser</span>
                     <span> 2018</span>
                     <span> 3D Animations</span>
@@ -34,7 +34,7 @@
             <div class="list-image swiper-slide slide-3" >
                 <a href="test.php"></a>
                 <div class="list-p-title">Ezra Brooks</div>
-                <div class="list-titles-meta">
+                <div class="list-titles-meta" data-cursor-text="Explore" >
                     <span> Hennessy</span>
                     <span> 2020</span>\
                     <span> Indoor. Outdoor</span>
@@ -46,7 +46,7 @@
             <div class="list-image swiper-slide slide-4" >
                 <a href="test.php"></a>
                 <div class="list-p-title">Meskalina Studio</div>
-                <div class="list-titles-meta">
+                <div class="list-titles-meta" data-cursor-text="Explore" data-cursor="-inverse">
                     <span> Unity</span>
                     <span> 2012</span>
                     <span> Paper Works</span>
